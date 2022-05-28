@@ -1,0 +1,70 @@
+﻿<Window x:Class="SignatureVerificationSystem.Windows.UserControlWindows.ManageUsersWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:SignatureVerificationSystem.Windows.UserControlWindows"
+        xmlns:lex ="http://wpflocalizeextension.codeplex.com"
+        lex:ResxLocalizationProvider.DefaultAssembly="SignatureVerificationSystem"
+        lex:ResxLocalizationProvider.DefaultDictionary="Strings"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Icon="..\..\Images\muhendisliklogo.png"
+        Title="{lex:Loc Key=ManageUsers}" Height="500" Width="640">
+
+    <Grid Background="#FFF">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <materialDesign:PackIcon Grid.Column="0" x:Name="IdArrow" Kind="ArrowDropUp" 
+                                     VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                                     Visibility="Hidden" Height="20" Width="20">
+            </materialDesign:PackIcon>
+
+            <materialDesign:PackIcon Grid.Column="1" x:Name="UsernameArrow" Kind="ArrowDropUp" 
+                                     VerticalAlignment="Bottom" HorizontalAlignment="Center"
+                                     Visibility="Hidden" Height="20" Width="20">
+            </materialDesign:PackIcon>
+
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+
+            </Grid.ColumnDefinitions>
+
+
+            <Button Grid.Column="0" x:Name="SortAsIDButton" Content="{lex:Loc}"
+                    Click="SortButton_Click"
+                    Foreground="Black" Background="#FFF"
+                    VerticalAlignment="Center" BorderThickness="0"
+                    Height="32" Width="Auto">
+            </Button>
+
+            <Button Grid.Column="1" x:Name="SortAsUsernameButton" Content="{lex:Loc}"
+                    Click="SortButton_Click"
+                    Foreground="Black" Background="#FFF"
+                    BorderThickness="0"
+                    Height="32" Width="Auto">
+            </Button>
+
+        </Grid>
+
+        <ListView Grid.Row="2" x:Name="UsersListView" Margin="10 0 10 0"></ListView>
+    </Grid>
+</Window>
